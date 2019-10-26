@@ -1,39 +1,15 @@
-
-<div class="landingDIV" >
-
-  <ul>
-    <li><a href="#">Главная</a></li>
-    <li><a href="#">Категории</a>
-      <ul>
-        <li><a href="#">Недвижимость</a></li>
-        <li><a href="#">Животные</a></li>
-        <li><a href="#">Личные вещи</a></li>
-        <li><a href="#">Работа</a></li>
-        <li><a href="#">Автомобили</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Подать объявление</a></li>
-    <li><a href="#">Поиск</a></li>
-  </ul>
-  <body>
-  <div class="container">
-    <img src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
-    <form>
-      <div class="dws-input">
-        <input type="text" name="username" placeholder="Введите логин">
-      </div>
-      <div class="dws-input">
-        <input type="password" name="password" placeholder="Введите пароль">
-      </div>
-      <input class="dws-submit" type="submit" name="submit" value="ВОЙТИ"><br />
-      <a href="#">Восстановить пароль</a>
-    </form>
-    <div class="dws-social">
-      <i class="fa fa-vk" aria-hidden="true"></i>
-      <i class="fa fa-twitter" aria-hidden="true"></i>
-      <i class="fa fa-facebook" aria-hidden="true"></i>
-      <i class="fa fa-google-plus-official" aria-hidden="true"></i>
-      <i class="fa fa-odnoklassniki" aria-hidden="true"></i>
-    </div>
-  </div>
-  </body>
+<ul>
+  <li><a href="#">Главная</a></li>
+  <li><a href="#">Категории</a>
+    <ul>
+      <li><a routerLink="/page" routerLinkActive="active">Недвижимость</a></li>
+      <li><a  routerLink="/animal" routerLinkActive="active">Животные</a></li>
+      <li><a routerLink="/clothes" routerLinkActive="active">Личные вещи</a></li>
+      <li><a routerLink="/work" routerLinkActive="active">Работа</a></li>
+      <li><a routerLink="/car" routerLinkActive="active">Автомобили</a></li>
+    </ul>
+  </li>
+  <li><a routerLink="/ad" routerLinkActive="active">Подать объявление</a></li>
+  <li><a routerLink="/search" routerLinkActive="active">Поиск</a></li>
+</ul>
+<router-outlet></router-outlet>
