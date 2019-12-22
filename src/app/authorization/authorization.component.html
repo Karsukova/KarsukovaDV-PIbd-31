@@ -1,15 +1,15 @@
 <div class="authorizationDIV" >
 <div class="container">
   <img src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
-  <form>
+  <form class="col s12 white" [formGroup]="form" (ngSubmit)="signIn()">
     <div class="dws-input">
-      <input type="text" name="username" placeholder="Введите логин">
+      <input type="text" ngModel name="username" formControlName="username" placeholder="Username" required>
     </div>
     <div class="dws-input">
-      <input type="password" name="password" placeholder="Введите пароль">
+      <input type="password" ngModel name="password" formControlName="password" placeholder="Password" required>
     </div>
     <input class="dws-submit" type="submit" name="submit" value="ВОЙТИ"><br />
-    <a href="#">Восстановить пароль</a>
+    <a href="registration">Зарегистрироваться</a>
   </form>
   <div class="dws-social">
     <i class="fa fa-vk" aria-hidden="true"></i>

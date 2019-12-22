@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from './services/auth.service';
-import {CanActivate, Router} from '@angular/router';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
-  selector: 'app-authorization',
-  templateUrl: './authorization.component.html',
-  styleUrls: ['./authorization.component.less']
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.less']
 })
-export class AuthorizationComponent implements OnInit {
-
-
+export class SignInComponent {
   form: FormGroup;
 
   constructor(
@@ -23,17 +21,18 @@ export class AuthorizationComponent implements OnInit {
       username: ['', Validators.required],
     });
   }
-  ngOnInit() {
-  }
+
   signIn() {
 
     const val = this.form.value;
 
+    console.log(val.username);
+    console.log(val.password);
     if (val.password && val.username) {
       this.authService.signIn(val.username, val.password)
         .subscribe(
           () => {
-            this.router.navigateByUrl(`/ad`);
+            this.router.navigateByUrl('http://localhost:8080/ad');
           }
         );
     }

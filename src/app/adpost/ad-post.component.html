@@ -1,0 +1,83 @@
+<div class="adpostDIV" >
+  <p>Вы на странице добовления объявления, заполните поля:</p>
+  <p><b>ID (только при удалении или редактировании):</b><br>
+    <input type="number" size="40" name="id" [(ngModel)]="id">
+  </p>
+  <p><b>Тема:</b><br>
+    <input type="text" size="40" name="name" [(ngModel)]="topic">
+  </p>
+
+  <p><b>Цена:</b><br>
+    <input type="number" size="40" name="price" [(ngModel)]="price">
+  </p>
+  <p><b>Номер телефона:</b><br>
+    <input type="text" size="40" name="telnum" [(ngModel)]="telnum">
+  </p>
+  <p><b>Текст:</b><br>
+    <input type="text" size="40" name="text" [(ngModel)]="text">
+  </p>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Поиск</span>
+    </div>
+    <input [ngModel]="searchQuery" (ngModelChange)="changed($event)" >
+  </div>
+
+  <a class="knopka" (click)="submit(11, price, text, topic, telnum, 11)">Добавить объявление</a>
+  <a class="knopka" (click)="delete(id)">Удалить объявление</a>
+  <a class="knopka" (click)="update(id, price, text, topic, telnum)">Редактировать объявление</a>
+  <td>
+    <!--TODO: нужно добавить вывод сохраненных файлов +
+            нужно добавить отношение между ивентами и файлами в бд-->
+    <ul *ngFor="let file of getFilesByAd(ad.id)">
+      <li>
+        <a [href]="file.url">{{file.filename}}</a>
+      </li>
+    </ul>
+    <input type="file" name="file" (change)="onFileChoose($event, ad.id)"/>
+  </td>
+  <br>
+  <table>
+    <tr>
+      <td>
+        <p>ID</p>
+      </td>
+      <td>
+        <p> Тема </p>
+      </td>
+      <td>
+        <p> Цена  </p>
+      </td>
+      <td>
+        <p>Номер телефона </p>
+      </td>
+      <td>
+      <p>Текст </p>
+      </td>
+
+    </tr>
+    <tr *ngFor="let ad of ads">
+      <td>
+        <p> {{ad["id"]}}</p>
+      </td>
+      <td>
+        <p>{{ad["topic"]}}</p>
+      <td>
+        <p> {{ad["price"]}}</p>
+      </td>
+      <td>
+        <p> {{ad["telnum"]}}</p>
+      </td>
+      <td>
+        <p> {{ad["text"]}}</p>
+      </td>
+      <td>
+        <p> {{ad["user_id"]}}</p>
+      </td>
+
+    </tr>
+
+  </table>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="registrationDIV" >
+<p>Вы на странице регистрации, заполните поля:</p>
+
+<p><b>Логин:</b><br>
+  <input type="text" size="40" name="Логин" [(ngModel)]="username">
+</p>
+
+<p><b>Пароль:</b><br>
+  <input type="text" size="40" name="Пароль" [(ngModel)]="password">
+</p>
+<p><b>ФИО:</b><br>
+  <input type="text" size="40" name="ФИО" [(ngModel)]="surname">
+</p>
+<p><b>Номер телефона:</b><br>
+  <input type="text" size="40" name="Номер телефона" [(ngModel)]="telnum">
+</p>
+<a class="knopka" (click)="submit(username, surname, telnum, password)">Зарегистрироваться</a>

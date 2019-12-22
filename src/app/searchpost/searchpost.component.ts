@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchpost.component.less']
 })
 export class SearchpostComponent implements OnInit {
+  searchQuery: any;
 
   constructor() { }
 

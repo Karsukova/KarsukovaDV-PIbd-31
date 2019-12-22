@@ -10,8 +10,16 @@ import { AnimalpostComponent } from './animalpost/animalpost.component';
 import { ClothespostComponent } from './clothespost/clothespost.component';
 import { WorkpostComponent } from './workpost/workpost.component';
 import { CarpostComponent } from './carpost/carpost.component';
-import { AdpostComponent } from './adpost/adpost.component';
+import { AdpostComponent } from './adpost/ad-post.component';
 import { SearchpostComponent } from './searchpost/searchpost.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { SignInComponent } from './authorization/Components/sign-in/sign-in.component';
+import { SignUpComponent } from './authorization/Components/sign-up/sign-up.component';
+import {AuthService} from './authorization/services/auth.service';
+import { RegistrationComponent } from './registration/registration.component';
+//import {BossGuard} from './BossGuard';
 
 @NgModule({
   declarations: [
@@ -21,16 +29,22 @@ import { SearchpostComponent } from './searchpost/searchpost.component';
     AuthorizationComponent,
     AnimalpostComponent,
     ClothespostComponent,
+    AdpostComponent,
     WorkpostComponent,
     CarpostComponent,
-    AdpostComponent,
-    SearchpostComponent
+    SearchpostComponent,
+    SignInComponent,
+    SignUpComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
